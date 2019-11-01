@@ -1,24 +1,52 @@
-# README
+# Dashboard-sneakers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a example to asynchronous communication across RabbitMq, recive the event in a worker and persist the payload into redis.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Just run the bundle install:
 
-* System dependencies
+```bash
+  bundle install
+  yarn install --check-files
+```
 
-* Configuration
+Create and bind the queue into RabbitMq
 
-* Database creation
+```bash
+  rake rabbitmq:setup
+```
 
-* Database initialization
+Command for run the workers
 
-* How to run the test suite
+```bash
+  WORKERS=PostsWorker rake sneakers:run
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+To run the app:
 
-* Deployment instructions
+```bash
+  rails server
+```
+## Prerequisites:
 
-* ...
+* Rabbitmq: 
+```bash
+   -Install(DOCKER): docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+```
+```bash
+   -Install(MAC OS): brew update / brew install rabbitmq
+```
+```bash
+   -Install(LINUX): https://www.rabbitmq.com/install-debian.html
+```
+* Redis: 
+```bash
+   -Install(MAC OS): brew install redis
+```
+
+## Pending
+- Install rspec
+- Create tests
+
+![Screenshot](app/assets/images/diagram.png)
