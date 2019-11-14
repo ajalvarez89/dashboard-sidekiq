@@ -1,6 +1,6 @@
 # Dashboard-sneakers
 
-This is a example to asynchronous communication across RabbitMq, recive the event in a worker and persist the payload into redis.
+This is an example to asynchronous communication across RabbitMq, recive the event in a worker and persist the payload into redis.
 
 ## Setup
 
