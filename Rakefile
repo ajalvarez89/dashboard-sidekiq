@@ -18,7 +18,7 @@ namespace :rabbitmq do
     x = ch.fanout("blog.posts")
 
     # get or create queue (note the durable setting)
-    queue = ch.queue("dashboard.posts", durable: true)
+    queue = ch.queue("dashboard.post", durable: true)
 
     # bind queue to exchange
     queue.bind("blog.posts")

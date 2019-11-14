@@ -3,7 +3,7 @@ class PostsWorker
   # This worker will connect to "dashboard.posts" queue
   # env is set to nil since by default the actuall queue name would be
   # "dashboard.posts_development"
-  from_queue "dashboard.posts", env: nil
+  from_queue "dashboard.post", env: nil
 
   # work method receives message payload in raw format
   # in our case it is JSON encoded string
